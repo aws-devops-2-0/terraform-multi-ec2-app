@@ -27,10 +27,11 @@ variable "instance_type_app" {
 variable "ami_id" {
   description = "The AMI ID for the EC2 instances"
   type        = string
-  # IMPORTANT: Find the latest Amazon Linux 2 AMI for your chosen region!
-  # For us-east-1 (N. Virginia), a common one might be "ami-05307616140ad2d2a" (Amazon Linux 2)
-  # Search AWS EC2 console -> Launch instance -> Amazon Linux 2 for current
-  default = "ami-0a7d80731ae1b2435" # Example AMI for us-east-1 (Amazon Linux 2)
+  # IMPORTANT: Find the latest **Ubuntu Server 22.04 LTS (HVM), SSD Volume Type** AMI for your chosen region!
+  # You can find this in the AWS EC2 console, launch instance, select Ubuntu.
+  # For us-east-1, a common one might be "ami-053b0d3d5f6629007" (Ubuntu 22.04 LTS, amd64) as of late 2024.
+  # THIS IS AN EXAMPLE. PLEASE VERIFY THE LATEST ONE IN YOUR CONSOLE.
+  default = "ami-0a7d80731ae1b2435" # EXAMPLE: Ubuntu 22.04 LTS for us-east-1
 }
 
 variable "key_name" {

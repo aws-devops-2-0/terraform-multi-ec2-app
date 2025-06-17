@@ -1,10 +1,9 @@
 # terraform-multi-ec2-app/security_groups.tf
 
-resource "aws_security_groups" "lb_sg" {
+resource "aws_security_group" "lb_sg" {
   name        = "${var.app_name}-LB-SG"
   description = "Allow HTTP/HTTPS from internet, SSH for admin"
   vpc_id      = aws_vpc.app_vpc.id
-
   # Allow HTTP traffic (from anywhere for demo)
   ingress {
     from_port   = 80
@@ -39,14 +38,14 @@ resource "aws_security_groups" "lb_sg" {
 resource "aws_security_group" "app_sg" {
   name        = "${var.app_name}-App-SG"
   description = "Allow HTTP from LB, SSH for admin"
-  vpc_id      = aws_vpc.app_vpc.id
+  vpc_id      = aws_vpc.app_vpc.id # Ensure this references the correct VPC
 
   # Allow HTTP traffic *only from* the Load Balancer Security Group
   ingress {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = [aws_security_group.lb_sg.id] # Source is the LB's SG
+    security_groups = [aws_security_group.lb_sg.id]
     description     = "Allow HTTP from LB"
   }
 
