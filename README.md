@@ -118,6 +118,8 @@ terraform output
 
 You can also SSH into the instances using their public IPs and your key pair if you wish to inspect them directly (e.g., `ssh -i /path/to/your/keypair.pem ec2-user@<INSTANCE_PUBLIC_IP>`).
 
+![image](https://github.com/user-attachments/assets/01507442-7206-4571-9aad-7b027cde8d1d)
+
 ---
 
 ## The Cleanup: Dismantling the Infrastructure
@@ -137,4 +139,3 @@ When you're finished experimenting, it's crucial to tear down the resources to a
     After the command completes, log into your AWS Management Console and verify that all the EC2 instances are terminated and other network resources (VPC, Security Groups, etc.) have been removed.
 
 ---
-
