@@ -138,17 +138,3 @@ When you're finished experimenting, it's crucial to tear down the resources to a
 
 ---
 
-## Future Explorations: What's Next?
-
-This project is merely a stepping stone. Consider these enhancements to deepen your understanding:
-
-- **AWS Application Load Balancer (ALB):** Replace the Nginx EC2 instance with a managed AWS ALB for more robust, scalable, and secure load balancing.
-- **Auto Scaling Groups:** Configure Auto Scaling Groups to automatically adjust the number of application servers based on demand.
-- **Private Subnets & NAT Gateway:** Place your application servers in private subnets for enhanced security, accessible only via the load balancer or a NAT Gateway for outbound internet access.
-- **Database Tier:** Add an Amazon RDS (Relational Database Service) instance to create a full 3-tier application.
-- **Terraform Modules:** Refactor your configuration into reusable modules for VPC, EC2, etc., promoting reusability and maintainability.
-- **CI/CD Integration:** Integrate this Terraform code into a Continuous Integration/Continuous Delivery (CI/CD) pipeline for automated deployments.
-
-This journey into Terraform and AWS DevOps is just beginning. Keep building, keep learning!
-
----
